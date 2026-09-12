@@ -1,0 +1,42 @@
+GLOBAL MAP SOURCES
+
+Sun — NASA/JPL, SDO + STEREO, 304 Å Carrington map:
+https://svs.gsfc.nasa.gov/30362/
+
+Mercury — MESSENGER MDIS Global Color Mosaic, MESSENGER Team / USGS Astrogeology:
+https://astrogeology.usgs.gov/search/map/mercury_messenger_mdis_global_color_mosaic_665m
+
+Venus — Magellan C3-MDIR Colorized Topographic Mosaic, USGS Astrogeology / PDS:
+https://astrogeology.usgs.gov/search/map/venus_magellan_global_c3_mdir_colorized_topographic_mosaic_6600m
+
+The active venus-visible-v12.png is a project-local visible-light cloud
+visualization guided by the natural-color appearance recorded by Mariner 10.
+The Magellan false-color surface map was used only as a development reference
+and is not included in the Workshop release.
+https://science.nasa.gov/photojournal/venus-from-mariner-10/
+
+Earth — Blue Marble, NASA/GSFC Scientific Visualization Studio, ID 2915:
+https://svs.gsfc.nasa.gov/2915/
+Blue Marble Next Generation data courtesy of Reto Stockli (NASA/GSFC)
+and NASA's Earth Observatory.
+
+Mars — Viking MDIM 2.1 Colorized Global Mosaic, NASA Ames / USGS Astrogeology:
+https://astrogeology.usgs.gov/search/map/mars_viking_colorized_global_mosaic_232m
+
+Jupiter, Saturn, Uranus and Neptune — NASA/ESA Hubble Space Telescope,
+Outer Planet Atmospheres Legacy (OPAL), Cycle 32 global color maps:
+https://archive.stsci.edu/hlsp/opal
+OPAL data are archived by the Space Telescope Science Institute and released
+under CC BY 4.0. DOI: 10.17909/T9G593.
+
+The *-clean-v11.png files are project-local derivatives of the sources above.
+Only missing/corrupted polar pixels, black no-data areas and projection-edge
+artifacts were reconstructed for reliable equirectangular WebGL wrapping.
+
+INTERACTIVE SOFTWARE
+
+Interface, orbital visualization and project-local texture derivatives:
+CK.product
+
+Three.js r160 — Copyright 2010-2023 Three.js Authors, MIT License.
+See THIRD_PARTY_LICENSES.txt in the project root.

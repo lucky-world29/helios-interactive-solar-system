@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <title>Helios — Interactive Solar System</title>
+    <link rel="preload" href="assets/earth-clean-v11.png" as="image" />
+    <link rel="stylesheet" href="styles.css?v=48" />
+  </head>
+  <body>
+    <canvas id="scene" aria-label="Interactive 3D map of the Solar System"></canvas>
+    <div class="vignette"></div>
+    <div class="grain"></div>
+
+    <div class="ui-layer" id="ui-layer">
+
+    <header class="topbar" id="topbar">
+      <div class="brand">
+        <span class="brand-mark"><i></i></span>
+        <div><b>HELIOS</b><small>Solar System · live map</small></div>
+      </div>
+      <nav class="mode-switch" aria-label="Map mode">
+        <button class="mode active" data-mode="orbit"><span>01</span> Orbits</button>
+        <button class="mode" data-mode="lineup"><span>02</span> In order</button>
+      </nav>
+      <div class="clock-block">
+        <div class="language-picker" title="Language">
+          <span>LANG</span>
+          <button id="language-select" type="button" aria-label="Language" data-language="en">EN</button>
+        </div>
+        <button class="wallpaper-toggle rotation-toggle active" id="rotation-toggle" type="button" aria-pressed="true">ROTATION: ON</button>
+        <button class="wallpaper-toggle exploration-toggle active" id="exploration-toggle" type="button" aria-pressed="true">PLANETS: OPEN</button>
+        <button class="wallpaper-toggle" id="wallpaper-mode-button" title="Hide interface">WALLPAPER MODE</button>
+        <span class="live-dot"></span>
+        <div><small id="clock-caption">CALCULATED MOMENT</small><b id="clock">—</b></div>
+      </div>
+    </header>
+
+    <section class="date-dock" id="date-dock">
+      <button id="prev-day" title="Previous day">−1d</button>
+      <label><span>OBSERVATION EPOCH</span><input id="date-input" type="datetime-local" min="1800-01-01T00:00" max="2050-12-31T23:59" /></label>
+      <button id="next-day" title="Next day">+1d</button>
+      <button class="now" id="now-button">Now</button>
+      <button class="play" id="play-button" title="Start time">▶</button>
+      <label class="speed"><span>SPEED</span><input id="speed-input" type="range" min="-20" max="100" value="10" /></label>
+      <output id="speed-output">10 days/s</output>
+    </section>
+
+    <aside class="map-legend" id="map-legend">
+      <div class="eyebrow">SPACE SCALE</div>
+      <div class="segmented">
+        <button class="active" data-scale="scenic">Compressed</button>
+        <button data-scale="relative">By AU</button>
+      </div>
+      <p id="scale-note">Orbits are compressed non-linearly so every planet remains visible.</p>
+    </aside>
+
+    <div class="system-status" id="system-status">
+      <span><i class="status-orbit"></i> J2000 ecliptic</span>
+      <span><i></i> Positions calculated</span>
+      <span id="date-jd">JD —</span>
+    </div>
+
+    <div class="hint" id="hint"><span>LMB</span> rotate <span>CLICK</span> explore</div>
+    <div class="owner-mark" aria-label="Project author">CK.product</div>
+    <button class="wallpaper-exit" id="wallpaper-mode-exit" aria-label="Show interface">SHOW INTERFACE</button>
+
+    <section class="wallpaper-widgets position-top-right" id="wallpaper-widgets" aria-label="Desktop elements">
+      <div class="desktop-widget desktop-clock-widget" id="desktop-clock-widget">
+        <span class="clock-orbit" aria-hidden="true"><i></i><i></i><i></i></span>
+        <time class="desktop-clock" id="desktop-clock">00:00</time>
+        <span class="desktop-date" id="desktop-date">—</span>
+        <div class="clock-meta" id="clock-meta"><span id="clock-zone">LOCAL</span><span id="clock-day">DAY —</span></div>
+      </div>
+      <div class="desktop-widget audio-widget" id="audio-widget" hidden>
+        <div class="widget-head"><span id="audio-source-status">WAITING FOR WE</span><b id="audio-style-label">SPECTRUM</b></div>
+        <canvas id="audio-visualizer" width="360" height="112" aria-label="Audio visualizer"></canvas>
+      </div>
+      <div class="desktop-widget timer-widget" id="timer-widget" hidden>
+        <div class="widget-head"><span>TIMER</span><b id="timer-status">READY</b></div>
+        <time id="timer-display">25:00</time>
+        <div class="timer-actions">
+          <button id="timer-toggle">START</button>
+          <button id="timer-reset">RESET</button>
+        </div>
+      </div>
+    </section>
+
+    <aside class="object-panel" id="object-panel" aria-live="polite">
+      <button class="close-panel" id="close-panel" aria-label="Return to map">← Back to map</button>
+      <div class="panel-scroll">
+        <div class="object-index" id="object-index">OBJECT 00 / 09</div>
+        <h1 id="object-name">Earth</h1>
+        <p class="latin" id="object-latin">TERRA · OCEAN PLANET</p>
+        <div class="rule"></div>
+        <p class="lead" id="object-lead"></p>
+        <div class="stats" id="object-stats"></div>
+        <section class="facts">
+          <h2>In brief</h2>
+          <p id="object-story"></p>
+        </section>
+        <div class="panel-collections">
+          <section class="discoveries">
+            <div class="section-title"><h2>Research points</h2><span id="hotspot-count">03</span></div>
+            <div id="discoveries-list"></div>
+          </section>
+          <section class="orbital-objects">
+            <div class="section-title"><h2>Moons and spacecraft</h2><span id="orbiter-count">00</span></div>
+            <p class="orbit-note">Orbits are schematic and compressed for exploration mode.</p>
+            <div id="orbiter-list"></div>
+          </section>
+        </div>
+      </div>
+    </aside>
+
+    <div class="focus-caption" id="focus-caption">
+      <span>DRAG THE PLANET TO ROTATE</span>
+      <b id="focus-name">EARTH</b>
+    </div>
+    <button class="next-object prev" id="prev-object" aria-label="Previous object">‹</button>
+    <button class="next-object next" id="next-object" aria-label="Next object">›</button>
+
+    </div>
+
+    <div id="labels" aria-hidden="true"></div>
+    <div id="orbiter-labels" aria-hidden="true"></div>
+    <div id="tooltip" role="tooltip"></div>
+
+    <div class="hotspot-card" id="hotspot-card">
+      <button aria-label="Close">×</button>
+      <small id="hotspot-type">MISSION</small>
+      <b id="hotspot-title"></b>
+      <p id="hotspot-text"></p>
+    </div>
+
+    <div class="loading" id="loading" role="status" aria-live="polite">
+      <div class="intro-copy">
+        <small class="intro-kicker">SOLAR CARTOGRAPHY / J2000 · CK.product</small>
+        <h1>HELIOS</h1>
+        <span class="intro-rule"></span>
+        <b id="intro-status">BUILDING ORBITS</b>
+        <small id="intro-ephemerides">Ephemerides · J2000</small>
+        <span class="intro-progress"><i></i></span>
+      </div>
+    </div>
+
+    <script src="vendor/three.min.js"></script>
+    <script src="data.js?v=18"></script>
+    <script src="i18n.js?v=45"></script>
+    <script src="app.js?v=48"></script>
+  </body>
+</html>

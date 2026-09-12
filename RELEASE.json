@@ -1,0 +1,13 @@
+{
+  "name": "Helios — Interactive Solar System",
+  "version": "1.0.4",
+  "releaseDate": "2026-07-18",
+  "author": "CK.product",
+  "entry": "index.html",
+  "platform": "Wallpaper Engine / Steam Workshop",
+  "type": "web",
+  "defaultVisibility": "private",
+  "ageRating": "Everyone",
+  "defaultLanguage": "en",
+  "languages": ["ru", "en", "de", "es"]
+}

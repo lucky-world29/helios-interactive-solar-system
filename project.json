@@ -1,0 +1,440 @@
+{
+	"contentrating" : "Everyone",
+	"description" : "Interactive Web wallpaper made with HTML, CSS and JavaScript.\r\nNo executable files. Fully offline after installation.\r\n\r\n[h1]Helios — Interactive Solar System[/h1]\r\n\r\nExplore the Solar System directly from your desktop.\r\n\r\nHelios is an interactive 3D map where planets move according to the selected date and time. Rotate the system, arrange the planets in a fixed lineup, or open any celestial body for a closer look.\r\n\r\nDiscover notable locations, scientific events, moons and spacecraft. When you simply want a beautiful background, enable Wallpaper Mode to leave only the planets, orbital paths and optional desktop widgets on screen.\r\n\r\n[h2]What you can do[/h2]\r\n\r\n[list]\r\n[*]Watch planetary positions change in real time\r\n[*]Travel to any planet or the Sun\r\n[*]Explore research points, moons and spacecraft\r\n[*]Switch between the orbital map and planet lineup\r\n[*]Enable clocks, timers and audio visualizers\r\n[*]Customize the gravity grid, interface color, quality and FPS\r\n[*]Lock camera rotation and planet transitions\r\n[*]Choose English, Russian, German or Spanish\r\n[*]Use the wallpaper completely offline after installation\r\n[/list]\r\n\r\n[i]Planet sizes, distances and some research-mode orbits are visually compressed to keep the Solar System clear and enjoyable to explore. Positions are calculated from J2000 orbital elements and are intended for educational visualization—not spacecraft navigation.[/i]\r\n\r\n[hr][/hr]\r\n\r\n[h1]Helios — интерактивная Солнечная система[/h1]\r\n\r\nИсследуйте Солнечную систему прямо на рабочем столе.\r\n\r\nHelios — это интерактивная 3D-карта, на которой планеты движутся в соответствии с выбранной датой и временем. Систему можно вращать, расположить все планеты по порядку или открыть любое небесное тело для подробного изучения.\r\n\r\nУ планет есть интересные научные точки, спутники и космические аппараты. А если хочется просто красивый фон, включите режим обоев — на экране останутся планеты, орбиты и выбранные вами виджеты.\r\n\r\n[h2]Что можно делать[/h2]\r\n\r\n[list]\r\n[*]Наблюдать за изменением положений планет в реальном времени\r\n[*]Приближать планеты и Солнце\r\n[*]Изучать научные точки, спутники и космические аппараты\r\n[*]Переключаться между картой орбит и планетами по порядку\r\n[*]Использовать часы, таймеры и аудиовизуализаторы\r\n[*]Настраивать гравитационную сетку, цвет интерфейса, качество и FPS\r\n[*]Отключать вращение камеры и случайные переходы к планетам\r\n[*]Выбирать русский, английский, немецкий или испанский язык\r\n[*]Пользоваться обоями полностью автономно после установки\r\n[/list]\r\n\r\n[i]Для удобства восприятия размеры планет, расстояния и некоторые орбиты в режиме исследования визуально сжаты. Положения рассчитываются по орбитальным элементам J2000 и предназначены для образовательной визуализации, а не для навигации космических аппаратов.[/i]\r\n\r\n[hr][/hr]\r\n\r\n[b]CK.product[/b]",
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"accentcolor" : 
+			{
+				"index" : 5,
+				"order" : 105,
+				"text" : "Interface color",
+				"type" : "color",
+				"value" : "0.247 0.824 1.000"
+			},
+			"clockformat" : 
+			{
+				"index" : 12,
+				"options" : 
+				[
+					{
+						"label" : "24-hour",
+						"value" : 0
+					},
+					{
+						"label" : "12-hour",
+						"value" : 1
+					}
+				],
+				"order" : 112,
+				"text" : "Clock format",
+				"type" : "combo",
+				"value" : 0
+			},
+			"clockstyle" : 
+			{
+				"index" : 13,
+				"options" : 
+				[
+					{
+						"label" : "Digital",
+						"value" : 0
+					},
+					{
+						"label" : "Mission",
+						"value" : 1
+					},
+					{
+						"label" : "Orbital",
+						"value" : 2
+					},
+					{
+						"label" : "Minimal",
+						"value" : 3
+					},
+					{
+						"label" : "Terminal",
+						"value" : 4
+					}
+				],
+				"order" : 113,
+				"text" : "Clock style",
+				"type" : "combo",
+				"value" : 0
+			},
+			"distancescale" : 
+			{
+				"index" : 1,
+				"options" : 
+				[
+					{
+						"label" : "Compressed — scenic",
+						"value" : 0
+					},
+					{
+						"label" : "Relative — by AU",
+						"value" : 1
+					}
+				],
+				"order" : 101,
+				"text" : "Distance scale",
+				"type" : "combo",
+				"value" : 0
+			},
+			"fps" : 
+			{
+				"index" : 7,
+				"max" : 120,
+				"min" : 20,
+				"order" : 107,
+				"text" : "FPS limit",
+				"type" : "slider",
+				"value" : 60
+			},
+			"gravitycellsize" : 
+			{
+				"index" : 22,
+				"max" : 200,
+				"min" : 25,
+				"order" : 122,
+				"text" : "Gravity grid cell size, %",
+				"type" : "slider",
+				"value" : 50
+			},
+			"gravitygridopacity" : 
+			{
+				"index" : 24,
+				"max" : 70,
+				"min" : 4,
+				"order" : 124,
+				"text" : "Gravity grid brightness, %",
+				"type" : "slider",
+				"value" : 28
+			},
+			"gravitygridstrength" : 
+			{
+				"index" : 23,
+				"max" : 200,
+				"min" : 20,
+				"order" : 123,
+				"text" : "Gravity strength / depth, %",
+				"type" : "slider",
+				"value" : 100
+			},
+			"gravitywaves" : 
+			{
+				"index" : 25,
+				"order" : 125,
+				"text" : "Gravity fabric waves",
+				"type" : "bool",
+				"value" : true
+			},
+			"language" : 
+			{
+				"index" : 26,
+				"options" : 
+				[
+					{
+						"label" : "Русский",
+						"value" : 0
+					},
+					{
+						"label" : "English",
+						"value" : 1
+					},
+					{
+						"label" : "Deutsch",
+						"value" : 2
+					},
+					{
+						"label" : "Español",
+						"value" : 3
+					}
+				],
+				"order" : 126,
+				"text" : "Language",
+				"type" : "combo",
+				"value" : 1
+			},
+			"mapmode" : 
+			{
+				"index" : 0,
+				"options" : 
+				[
+					{
+						"label" : "Real-time orbits",
+						"value" : 0
+					},
+					{
+						"label" : "Planets in order",
+						"value" : 1
+					}
+				],
+				"order" : 100,
+				"text" : "Map mode",
+				"type" : "combo",
+				"value" : 0
+			},
+			"mouserotation" : 
+			{
+				"index" : 27,
+				"order" : 127,
+				"text" : "Rotate map and objects with LMB",
+				"type" : "bool",
+				"value" : true
+			},
+			"planettransitions" : 
+			{
+				"index" : 28,
+				"order" : 128,
+				"text" : "Open planets and the Sun on click",
+				"type" : "bool",
+				"value" : true
+			},
+			"quality" : 
+			{
+				"index" : 6,
+				"options" : 
+				[
+					{
+						"label" : "Performance",
+						"value" : 0
+					},
+					{
+						"label" : "High",
+						"value" : 1
+					}
+				],
+				"order" : 106,
+				"text" : "Quality",
+				"type" : "combo",
+				"value" : 1
+			},
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0 0 0"
+			},
+			"showclock" : 
+			{
+				"index" : 10,
+				"order" : 110,
+				"text" : "Large clock",
+				"type" : "bool",
+				"value" : true
+			},
+			"showdate" : 
+			{
+				"index" : 11,
+				"order" : 111,
+				"text" : "Date below clock",
+				"type" : "bool",
+				"value" : true
+			},
+			"showgravitygrid" : 
+			{
+				"index" : 21,
+				"order" : 121,
+				"text" : "Gravity fabric",
+				"type" : "bool",
+				"value" : true
+			},
+			"showlabels" : 
+			{
+				"index" : 3,
+				"order" : 103,
+				"text" : "Planet labels",
+				"type" : "bool",
+				"value" : true
+			},
+			"showorbits" : 
+			{
+				"index" : 4,
+				"order" : 104,
+				"text" : "Orbit lines",
+				"type" : "bool",
+				"value" : true
+			},
+			"showtimer" : 
+			{
+				"index" : 17,
+				"order" : 117,
+				"text" : "Timer",
+				"type" : "bool",
+				"value" : false
+			},
+			"showvisualizer" : 
+			{
+				"index" : 14,
+				"order" : 114,
+				"text" : "Audio visualizer",
+				"type" : "bool",
+				"value" : false
+			},
+			"textscale" : 
+			{
+				"index" : 30,
+				"max" : 200,
+				"min" : 75,
+				"order" : 130,
+				"text" : "Text size, %",
+				"type" : "slider",
+				"value" : 100
+			},
+			"timerduration" : 
+			{
+				"index" : 18,
+				"max" : 180,
+				"min" : 1,
+				"order" : 118,
+				"text" : "Timer duration — minutes",
+				"type" : "slider",
+				"value" : 25
+			},
+			"timespeed" : 
+			{
+				"index" : 2,
+				"max" : 100,
+				"min" : -20,
+				"order" : 102,
+				"text" : "Simulation speed (0 = real time)",
+				"type" : "slider",
+				"value" : 0
+			},
+			"uiscale" : 
+			{
+				"index" : 29,
+				"max" : 200,
+				"min" : 75,
+				"order" : 129,
+				"text" : "Interface scale (100% = automatic)",
+				"type" : "slider",
+				"value" : 100
+			},
+			"visualizersensitivity" : 
+			{
+				"index" : 16,
+				"max" : 200,
+				"min" : 25,
+				"order" : 116,
+				"text" : "Visualizer sensitivity",
+				"type" : "slider",
+				"value" : 100
+			},
+			"visualizerstyle" : 
+			{
+				"index" : 15,
+				"options" : 
+				[
+					{
+						"label" : "Spectrum",
+						"value" : 0
+					},
+					{
+						"label" : "Wave",
+						"value" : 1
+					},
+					{
+						"label" : "Orbit",
+						"value" : 2
+					},
+					{
+						"label" : "Mirrored spectrum",
+						"value" : 3
+					},
+					{
+						"label" : "Rings",
+						"value" : 4
+					},
+					{
+						"label" : "Constellation",
+						"value" : 5
+					}
+				],
+				"order" : 115,
+				"text" : "Visualizer style",
+				"type" : "combo",
+				"value" : 0
+			},
+			"wallpapermode" : 
+			{
+				"index" : 8,
+				"order" : 108,
+				"text" : "Wallpaper mode — hide interface",
+				"type" : "bool",
+				"value" : false
+			},
+			"widgetposition" : 
+			{
+				"index" : 19,
+				"options" : 
+				[
+					{
+						"label" : "Top right",
+						"value" : 0
+					},
+					{
+						"label" : "Top left",
+						"value" : 1
+					},
+					{
+						"label" : "Bottom right",
+						"value" : 2
+					},
+					{
+						"label" : "Bottom left",
+						"value" : 3
+					}
+				],
+				"order" : 119,
+				"text" : "Desktop element position",
+				"type" : "combo",
+				"value" : 0
+			},
+			"widgetscale" : 
+			{
+				"index" : 20,
+				"max" : 150,
+				"min" : 50,
+				"order" : 120,
+				"text" : "Desktop element scale, %",
+				"type" : "slider",
+				"value" : 100
+			},
+			"widgetvisibility" : 
+			{
+				"index" : 9,
+				"options" : 
+				[
+					{
+						"label" : "Wallpaper mode only",
+						"value" : 0
+					},
+					{
+						"label" : "Always",
+						"value" : 1
+					}
+				],
+				"order" : 109,
+				"text" : "When to show desktop elements",
+				"type" : "combo",
+				"value" : 0
+			}
+		},
+		"supportsaudioprocessing" : true
+	},
+	"preview" : "preview.jpg",
+	"ratingsex" : "none",
+	"ratingviolence" : "none",
+	"tags" : [ "Sci-Fi" ],
+	"title" : "Helios — Interactive Solar System",
+	"type" : "Web",
+	"version" : 1,
+	"visibility" : "public",
+	"workshopid" : "3766278127",
+	"workshopurl" : "steam://url/CommunityFilePage/3766278127"
+}
